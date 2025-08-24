@@ -1,0 +1,31 @@
+# Vivado build outputs
+*.jou
+*.log
+*.backup.jou
+*.backup.log
+*.xpr
+*.str
+*.zip
+*.mcs
+*.bit
+*.bin
+*.ltx
+
+# Vivado generated dirs
+.Xil/
+*.cache/
+*.gen/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+# If you use GUI projects, don't track the auto-managed srcs folder
+*.srcs/
+
+# Vitis / SDK (if used)
+.sdk/
+.msys/
+
+# OS clutter
+.DS_Store
+Thumbs.db
