@@ -15,7 +15,7 @@ This project presents the **design, implementation, and verification** of a teac
 
 Correctness was validated through **directed assembly tests** and **FPGA debugging** with a Xilinx Integrated Logic Analyzer (ILA) on the Nexys A7.
 
-📄 Full paper: [RISC-V FPU and Interrupt CPU Extensions (PDF)](docs/RISC-V_FPU_and_Interrupt_CPU_Extensions.pdf)
+📄 Full paper: [RISC-V FPU and Interrupt CPU Extensions (PDF)](riscv-fpu-interrupts_paper.pdf)
 
 ---
 
@@ -37,10 +37,33 @@ Correctness was validated through **directed assembly tests** and **FPGA debuggi
 
 ## 🛠️ Tools & Setup
 - **Hardware**: Digilent Nexys A7 FPGA  
-- **Tools**: Xilinx Vivado (synthesis, P&R, ILA debug)  
+- **Tools**: Xilinx Vivado 2024.2(synthesis, P&R, ILA debug)  
 - **Languages**: Verilog HDL + RISC-V assembly  
 
-To run on FPGA:  
-```bash
-# Synthesize and generate bitstream in Vivado
-# Program Nexys A7 with generated .bit file
+## Running on FPGA (Windows)
+
+1. Open either the **`sc-interrupt`** or **`fpu`** project folder, depending on which project you want to run.  
+
+2. For `sc-interrupt` Open `src/sc_interrupt_sys.v` in your text editor of choice.
+3. For `fpu` Open `src/pl_stage_if.v`   for IMEM file path and `src/pl_stage_mem` for DMEM file path.
+
+4. Edit the following lines to point to the path where your local repo lives:
+
+   `
+   parameter IMEM_FILE = "C:/riscv-fpu-interrupts/sc-interrupt/src/Assembly/RISCVscintSwitchLED7Seg/imem.mem";
+   parameter DMEM_FILE = "C:/riscv-fpu-interrupts/sc-interrupt/src/Assembly/RISCVscintSwitchLED7Seg/dmem.mem";
+   `
+
+   If you clone the project, You should only need to modify the before 
+   `/risc-fpu-interrupts` 
+   
+   for instance if your local repo is in, `C:/Downloads/` , your modification result will be
+   `parameter IMEM_FILE = "C:/Downloads/riscv-fpu-interrupts/sc-interrupt/src/Assembly/RISCVscintSwitchLED7Seg/imem.mem";`
+
+5. Save the file and exit your text editor.
+
+6. Double-click make_project.bat located at:
+	
+	`
+	riscv-fpu-interrupts/make_project.bat
+	`
