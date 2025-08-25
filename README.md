@@ -45,7 +45,7 @@ Correctness was validated through **directed assembly tests** and **FPGA debuggi
 1. Open either the **`sc-interrupt`** or **`fpu`** project folder, depending on which project you want to run.  
 
 2. For `sc-interrupt` Open `src/sc_interrupt_sys.v` in your text editor of choice.
-3. For `fpu` Open `src/pl_stage_if.v`   for IMEM file path and `src/pl_stage_mem` for DMEM file path.
+3. For `fpu` Open `"/fpu/riscv-pipelined-fpu-interrupt.srcs/sources_1/imports/RISCVpipelinecode/pl_stage_id.v"` for IMEM file path,  and `/fpu/riscv-pipelined-fpu-interrupt.srcs/sources_1/imports/RISCVpipelinecode/pl_stage_mem` for DMEM file path.
 
 4. Edit the following lines to point to the path where your local repo lives:
 
@@ -62,8 +62,9 @@ Correctness was validated through **directed assembly tests** and **FPGA debuggi
 
 5. Save the file and exit your text editor.
 
-6. Double-click make_project.bat located at:
+6. For single-cycle Double-click make_project.bat located at:
 	
 	`
 	riscv-fpu-interrupts/make_project.bat
 	`
+7. For fpu, open the .xpr file
